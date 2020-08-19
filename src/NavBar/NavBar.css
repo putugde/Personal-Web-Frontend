@@ -1,0 +1,11 @@
+.topLink{
+    margin-right: 2vw;
+}
+
+.link{
+    font-weight: 300 !important;
+}
+
+.link:hover{
+    text-decoration:none !important;
+}

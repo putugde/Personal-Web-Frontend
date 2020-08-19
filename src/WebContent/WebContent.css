@@ -1,0 +1,9 @@
+.custom-date{
+    color: #222;
+}
+
+@media only screen and (max-width: 1169px) {
+    .custom-date{
+        color: #fff;
+    }
+  }
