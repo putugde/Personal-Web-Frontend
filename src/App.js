@@ -36,7 +36,7 @@ class App extends React.Component{
                 <Typography variant="h2">
                   I Am <span style={{fontWeight:500}}><Typewriter
                     options={{
-                      strings: ['A Software Engineer.', 'A Computer Science Student.'],
+                      strings: ['Putu Gde.','A Software Engineer.', 'A Computer Science Student.'],
                       autoStart: true,
                       loop: true,
                     }}
