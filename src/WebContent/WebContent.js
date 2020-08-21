@@ -120,7 +120,7 @@ class WebContent extends React.Component{
 class MyTimeline extends React.Component{
     render(){
         let verticalTimelineArray = []
-        for (let [index, value] of timelineData.entries()) {
+        for (let [, value] of timelineData.entries()) {
             if (value.type === 'work'){
                 verticalTimelineArray.push(
                     <VerticalTimelineElement

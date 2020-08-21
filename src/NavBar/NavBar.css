@@ -1,5 +1,14 @@
 .topLink{
     margin-right: 2vw;
+    transition:transform .5s;
+}
+
+.topLink:hover{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .link{
@@ -8,6 +17,7 @@
 
 .link:hover{
     text-decoration:none !important;
+    
 }
 
 header.hide{

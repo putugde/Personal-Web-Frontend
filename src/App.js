@@ -13,7 +13,6 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import {Link } from '@material-ui/core';
 import Typewriter from 'typewriter-effect';
 
-
 const linkData = {
   'twitterLink':'https://twitter.com/putu_gde_',
   'linkedinLink':'https://www.linkedin.com/in/putu-gde-ab760a181/',

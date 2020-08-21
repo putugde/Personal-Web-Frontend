@@ -1,16 +1,12 @@
 import React from 'react';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import { Container, Link, Button } from '@material-ui/core';
+import { Container, Link } from '@material-ui/core';
 import PropTypes from "prop-types";
 
 import './NavBar.css';
@@ -82,27 +78,16 @@ function NavBarInternal(props) {
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
-    >
-        <MenuItem>
-          <div style={{width:'100%'}}>
-              <Link href="#about-me" style={{color:'black', textDecoration:'none'}}>
-                  About Me
-              </Link>
-          </div>
-        </MenuItem>
-        <MenuItem>
-          <div style={{width:'100%'}}>
-              <Link href="#experience" style={{color:'black', textDecoration:'none'}}>
-              Education & Experience
-              </Link>
-          </div>
-        </MenuItem><MenuItem>
-          <div style={{width:'100%'}}>
-              <Link href="#projects" style={{color:'black', textDecoration:'none'}}>
-              Projects
-              </Link>
-          </div>
-        </MenuItem>
+    > 
+        <Link href="#about-me" style={{color:'black', textDecoration:'none'}} onClick={handleMobileMenuClose}>
+          <MenuItem>About Me</MenuItem>
+        </Link>
+        <Link href="#experience" style={{color:'black', textDecoration:'none'}} onClick={handleMobileMenuClose}>
+          <MenuItem>Education & Experience</MenuItem>
+        </Link>
+        <Link href="#projects" style={{color:'black', textDecoration:'none'}} onClick={handleMobileMenuClose}>
+          <MenuItem>Projects</MenuItem>
+        </Link>
     </Menu>
   );
 

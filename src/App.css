@@ -1,4 +1,4 @@
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -7,7 +7,7 @@ html{
 }
 
 .top-container{
-  background-image: url("./static/bg-2-bnw.jpg");
+  background-image: url("./assets/bg-2-bnw.jpg");
   background-size: cover;
 
   height: 100vh;
