@@ -9,3 +9,15 @@
 .link:hover{
     text-decoration:none !important;
 }
+
+header.hide{
+    background-color: transparent;
+    box-shadow: none;
+    transition:all .5s;
+}
+
+header.show{
+    background-color: #f3f4f5;
+    color: #222;
+    transition:all .5s;
+}

@@ -2,6 +2,10 @@ html{
   scroll-behavior: smooth;
 }
 
+.Typewriter{
+  display: inline;
+}
+
 .top-container{
   background-image: url("./static/bg-2-bnw.jpg");
   background-size: cover;
@@ -9,10 +13,37 @@ html{
   height: 100vh;
 }
 
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge{
+  transition: all .2s;
+  color: white;
+}
+
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge:hover{
+  -moz-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
 .top-content{
   background: rgba(0, 0, 0, 0.65);
   height: 100vh;
-
+  
   color: whitesmoke;
-  padding-top: 40vh;
+  padding-top: 35vh;
+}
+.svgCurve{
+  -moz-transform: translate(0px, -20px);
+  -webkit-transform: translate(0px, -20px);
+  -o-transform: translate(0px, -20px);
+  -ms-transform: translate(0px, -20px);
+  transform: translate(0px, -20px);
+}
+
+@media (max-width: 1169px) {
+  .svgCurve{
+    display: none;
+  }
 }

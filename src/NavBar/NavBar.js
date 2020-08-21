@@ -11,6 +11,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { Container, Link, Button } from '@material-ui/core';
+import PropTypes from "prop-types";
 
 import './NavBar.css';
 
@@ -57,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavBar() {
+function NavBarInternal(props) {
   const classes = useStyles();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -83,39 +84,36 @@ export default function NavBar() {
       onClose={handleMobileMenuClose}
     >
         <MenuItem>
-            <Link href="https://www.example.com">
-                <div>
-                    About Me
-                </div>
-            </Link>
+          <div style={{width:'100%'}}>
+              <Link href="#about-me" style={{color:'black', textDecoration:'none'}}>
+                  About Me
+              </Link>
+          </div>
         </MenuItem>
         <MenuItem>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-            <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-            </Badge>
-            </IconButton>
-            <p>Messages</p>
-        </MenuItem>
-        <MenuItem>
-            <IconButton aria-label="show 11 new notifications" color="inherit">
-            <Badge badgeContent={11} color="secondary">
-                <NotificationsIcon />
-            </Badge>
-            </IconButton>
-            <p>Notifications</p>
+          <div style={{width:'100%'}}>
+              <Link href="#experience" style={{color:'black', textDecoration:'none'}}>
+              Education & Experience
+              </Link>
+          </div>
+        </MenuItem><MenuItem>
+          <div style={{width:'100%'}}>
+              <Link href="#projects" style={{color:'black', textDecoration:'none'}}>
+              Projects
+              </Link>
+          </div>
         </MenuItem>
     </Menu>
   );
 
   return (
     <div className={classes.grow}>
-      <AppBar position="fixed" style={{background:"transparent", boxShadow:"none"}}>
+      <AppBar position="fixed" className={props.bg}>
           <Container>
         <Toolbar disableGutters>
-          <Typography className={classes.title} variant="h5" style={{fontWeight:'500'}}>
+          <Link href="#back-top" color="inherit" variant="h5" style={{fontWeight:'500', textDecoration:'none'}}>
             Putu Gde
-          </Typography>
+          </Link>
           <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
                 <div className="topLink">
@@ -129,32 +127,10 @@ export default function NavBar() {
                     </Link>
                 </div>
                 <div className="topLink">
-                    <Link href="https://www.example.com" variant="h6" color="inherit" className="link">
+                    <Link href="#projects" variant="h6" color="inherit" className="link">
                         Projects
                     </Link>
                 </div>
-                {/* <Button href="#" color="inherit">
-                    About Me
-                </Button>
-                <Button href="#" color="inherit">
-                    Experiences
-                </Button>
-                <Button href="#" color="inherit">
-                    Education
-                </Button>
-                <Button href="#" color="inherit">
-                    Projects
-                </Button> */}
-                {/* <IconButton aria-label="show 4 new mails" color="inherit">
-                <Badge badgeContent={0} color="secondary">
-                    <MailIcon />
-                </Badge>
-                </IconButton>
-                <IconButton aria-label="show 17 new notifications" color="inherit">
-                <Badge badgeContent={17} color="secondary">
-                    <NotificationsIcon />
-                </Badge>
-                </IconButton> */}
             </div>
           <div className={classes.sectionMobile}>
             <IconButton
@@ -174,3 +150,51 @@ export default function NavBar() {
     </div>
   );
 }
+
+class NavBar extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: true,
+      scrollPos: 0
+    };
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+
+  static propTypes = {
+    brand: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      to: PropTypes.string.isRequired
+    }),
+    links: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        to: PropTypes.string.isRequired
+      })
+    )
+  };
+
+  handleScroll() {
+    const { scrollPos } = this.state;
+    this.setState({
+      scrollPos: document.body.getBoundingClientRect().top,
+      show: scrollPos > -100
+    });
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  render(){
+    return <div className={this.state.show ? "active" : "hidden"}><NavBarInternal bg={this.state.show ? "hide" : "show"}/></div>
+    
+  }
+}
+
+export default NavBar;

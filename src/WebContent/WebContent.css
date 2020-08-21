@@ -2,6 +2,23 @@
     color: #222;
 }
 
+.linkWeb:hover{
+    cursor: pointer;
+}
+
+.hoverize{
+    transition: all .3s;
+    width: 100%;
+}
+
+.hoverize:hover{
+    -moz-transform: translate(0px, -13px);
+    -webkit-transform: translate(0px, -13px);
+    -o-transform: translate(0px, -13px);
+    -ms-transform: translate(0px, -13px);
+    transform: translate(0px, -13px);
+}
+
 @media only screen and (max-width: 1169px) {
     .custom-date{
         color: #fff;
