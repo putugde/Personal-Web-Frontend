@@ -8,92 +8,12 @@ import StarIcon from '@material-ui/icons/Star';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import 'react-vertical-timeline-component/style.min.css';
 
-const aboutMe = "My name is Putu Gde Aditya Taguh Widiana. I'm a Final year Computer Science Student at Bandung Institute of Technology. I love to solve problems. I'm interested in Web Development and Machine Learning, especially NLP."
-const timelineData = [
-    {
-        'type':'work',
-        'title':'Software Engineer',
-        'subtitle': 'Kredibel',
-        'loc':'Greater Jakarta Area, Indonesia',
-        'date':'August 2020 - Present'
-    },
-    {
-        'type':'work',
-        'title':'Software Engineer Intern',
-        'subtitle': 'Kredibel',
-        'loc':'Greater Jakarta Area, Indonesia',
-        'date':'May 2020 - August 2020'
-    },
-    {
-        'type':'work',
-        'title':'Software Engineer Intern',
-        'subtitle': 'IBM JTI',
-        'loc':'Greater Jakarta Area, Indonesia',
-        'date':'May 2019 - August 2019'
-    },
-    {
-        'type':'edu',
-        'title':'Computer Science Bachelor\'s Degree',
-        'subtitle': 'Bandung Institute of Technology',
-        'loc':'Bandung Area, West Java, Indonesia',
-        'date':'July 2017 - Present'
-    },
-    {
-        'type':'edu',
-        'title':'Senior High School',
-        'subtitle': 'SMAK Penabur Harapan Indah',
-        'loc':'Bekasi , West Java, Indonesia',
-        'date':'July 2014 - May 2017'
-    },
-    {
-        'type':'edu',
-        'title':'Junior High School',
-        'subtitle': 'SMPK Penabur Harapan Indah',
-        'loc':'Bekasi, West Java, Indonesia',
-        'date':'July 2011 - May 2014'
-    },
-    {
-        'type':'edu',
-        'title':'Elementary School',
-        'subtitle': 'SD Tunas Harapan',
-        'loc':'Bekasi, West Java, Indonesia',
-        'date':'July 2005 - May 2011'
-    },
-]
+import data from '../../data/data.json';
 
-const projectData = [
-    {
-        'name':'Personal Web',
-        'link':'http://putu-gde.engineer/',
-        'stack':'ReactJS, Material UI',
-        'github':'https://github.com/putugde/Personal-Web-Frontend',
-        'desc':'Well, self explanatory :)'
-    },
-    {
-        'name':'Obscura Exhibition 2020',
-        'link':'https://www.obscuraexhibition.web.id',
-        'stack':'Django, PostgreSQL, Bootstrap 4',
-        'desc':'Website for photography exhibition'
-    },
-    {
-        'name':'Qvestment',
-        'link':'http://qvestment.web.id/',
-        'stack':'Django, PostgreSQL, Bootstrap 4',
-        'desc':'Equity Crowdfunding Website'
-    },
-    {
-        'name':'QUI Enhancement 2.0',
-        'stack':'Django, PostgreSQL, Bootstrap 4',
-        'desc':'Adding new features into QUI Website'
-    },
-    {
-        'name':'Cookiet',
-        'stack':'Flutter, ExpressJS',
-        'desc':'Mobile app for choosing what food to cook, based on available ingredients.',
-        'github':'https://github.com/putugde/Cookiet'
-    },
+const aboutMe = data.aboutMe;
+const timelineData = data.timelineData;
+const projectData = data.projectData;
 
-]
 class WebContent extends React.Component{
     render(){
         return(
@@ -113,17 +33,18 @@ class WebContent extends React.Component{
                 <MyTimeline/>
                 <MyProjects/>
             </div>
-        )
+        );
     }
 }
 
 class MyTimeline extends React.Component{
     render(){
         let verticalTimelineArray = []
-        for (let [, value] of timelineData.entries()) {
+        for (let [index, value] of timelineData.entries()) {
             if (value.type === 'work'){
                 verticalTimelineArray.push(
                     <VerticalTimelineElement
+                        key={'timeLine'+index}
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#555', color: '#fff' }}
                         contentArrowStyle={{ borderRight: '7px solid  #555' }}
@@ -142,6 +63,7 @@ class MyTimeline extends React.Component{
             }else{
                 verticalTimelineArray.push(
                     <VerticalTimelineElement
+                        key={'timeLine'+index}
                         className="vertical-timeline-element--education"
                         contentStyle={{ background: '#fff', color: '#222' }}
                         contentArrowStyle={{ borderRight: '7px solid  #888' }}
@@ -179,10 +101,10 @@ class MyTimeline extends React.Component{
 class MyProjects extends React.Component{
     render(){
         let projectArray = [];
-        for (let [, value] of projectData.entries()) {
+        for (let [index, value] of projectData.entries()) {
             if ((value.github) && (value.link)){
                 projectArray.push(
-                    <Grid item md={6} className="hoverize"> 
+                    <Grid item md={6} className="hoverize" key={'project'+index}> 
                         <Card style={{height:'100%'}}>
                             <CardContent>
                                 <Link href={value.link} target="_blank">
@@ -195,7 +117,7 @@ class MyProjects extends React.Component{
                                         <GitHubIcon style={{marginRight:5}}/>
                                     </Grid>
                                     <Grid item xs={11}>
-                                        <Link variant="body" target="_blank" className="linkWeb">{value.github}</Link>
+                                        <Link variant="body1" target="_blank" className="linkWeb">{value.github}</Link>
                                     </Grid>
                                 </Grid>
                             </CardContent>
@@ -204,7 +126,7 @@ class MyProjects extends React.Component{
                 );
             } else if (value.github){
                 projectArray.push(
-                    <Grid item md={6} className="hoverize"> 
+                    <Grid item md={6} className="hoverize" key={'project'+index}> 
                         <Card style={{height:'100%'}}>
                             <CardContent>
                                 <Typography variant="h6">{value.name}</Typography>
@@ -215,7 +137,7 @@ class MyProjects extends React.Component{
                                         <GitHubIcon style={{marginRight:5}}/>
                                     </Grid>
                                     <Grid item xs={11}>
-                                        <Link variant="body" target="_blank" className="linkWeb">{value.github}</Link>
+                                        <Link variant="body1" target="_blank" className="linkWeb">{value.github}</Link>
                                     </Grid>
                                 </Grid>
                             </CardContent>
@@ -224,7 +146,7 @@ class MyProjects extends React.Component{
                 );
             } else if (value.link){
                 projectArray.push(
-                    <Grid item md={6} className="hoverize"> 
+                    <Grid item md={6} className="hoverize" key={'project'+index}> 
                         <Card style={{height:'100%'}}>
                             <CardContent>
                                 <Link href={value.link} target="_blank">
@@ -238,7 +160,7 @@ class MyProjects extends React.Component{
                 );
             } else {
                 projectArray.push(
-                    <Grid item md={6} className="hoverize"> 
+                    <Grid item md={6} className="hoverize" key={'project'+index}> 
                         <Card style={{height:'100%'}}>
                             <CardContent>
                                 <Typography variant="h6">{value.name}</Typography>

@@ -1,0 +1,92 @@
+{
+    "linkData":{
+        "twitterLink":"https://twitter.com/putu_gde_",
+        "linkedinLink":"https://www.linkedin.com/in/putu-gde-ab760a181/",
+        "githubLink":"https://github.com/putugde"
+    },
+    "typewritterList":["Putu Gde.","A Software Engineer.", "A Computer Science Student."],
+    "aboutMe":"My name is Putu Gde Aditya Taguh Widiana. I'm a Final year Computer Science Student at Bandung Institute of Technology. I love to solve problems. I'm interested in Web Development and Machine Learning, especially NLP.",
+    "timelineData":[
+        {
+            "type":"work",
+            "title":"Software Engineer",
+            "subtitle": "Kredibel",
+            "loc":"Greater Jakarta Area, Indonesia",
+            "date":"August 2020 - Present"
+        },
+        {
+            "type":"work",
+            "title":"Software Engineer Intern",
+            "subtitle": "Kredibel",
+            "loc":"Greater Jakarta Area, Indonesia",
+            "date":"May 2020 - August 2020"
+        },
+        {
+            "type":"work",
+            "title":"Software Engineer Intern",
+            "subtitle": "IBM JTI",
+            "loc":"Greater Jakarta Area, Indonesia",
+            "date":"May 2019 - August 2019"
+        },
+        {
+            "type":"edu",
+            "title":"Computer Science Bachelor\"s Degree",
+            "subtitle": "Bandung Institute of Technology",
+            "loc":"Bandung Area, West Java, Indonesia",
+            "date":"July 2017 - Present"
+        },
+        {
+            "type":"edu",
+            "title":"Senior High School",
+            "subtitle": "SMAK Penabur Harapan Indah",
+            "loc":"Bekasi , West Java, Indonesia",
+            "date":"July 2014 - May 2017"
+        },
+        {
+            "type":"edu",
+            "title":"Junior High School",
+            "subtitle": "SMPK Penabur Harapan Indah",
+            "loc":"Bekasi, West Java, Indonesia",
+            "date":"July 2011 - May 2014"
+        },
+        {
+            "type":"edu",
+            "title":"Elementary School",
+            "subtitle": "SD Tunas Harapan",
+            "loc":"Bekasi, West Java, Indonesia",
+            "date":"July 2005 - May 2011"
+        }
+    ],
+    "projectData":[
+        {
+            "name":"Personal Web",
+            "link":"http://putu-gde.engineer/",
+            "stack":"ReactJS, Material UI",
+            "github":"https://github.com/putugde/Personal-Web-Frontend",
+            "desc":"Well, self explanatory :)"
+        },
+        {
+            "name":"Obscura Exhibition 2020",
+            "link":"https://www.obscuraexhibition.web.id",
+            "stack":"Django, PostgreSQL, Bootstrap 4",
+            "desc":"Website for photography exhibition"
+        },
+        {
+            "name":"Qvestment",
+            "link":"http://qvestment.web.id/",
+            "stack":"Django, PostgreSQL, Bootstrap 4",
+            "desc":"Equity Crowdfunding Website"
+        },
+        {
+            "name":"QUI Enhancement 2.0",
+            "stack":"Django, PostgreSQL, Bootstrap 4",
+            "desc":"Adding new features into QUI Website"
+        },
+        {
+            "name":"Cookiet",
+            "stack":"Flutter, ExpressJS",
+            "desc":"Mobile app for choosing what food to cook, based on available ingredients.",
+            "github":"https://github.com/putugde/Cookiet"
+        }
+    ]
+}
