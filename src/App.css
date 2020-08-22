@@ -8,6 +8,7 @@ html {
 
 .top-container{
   background-image: url("./assets/bg-2-bnw.jpg");
+  background-position: center;
   background-size: cover;
 
   height: 100vh;
@@ -33,7 +34,9 @@ html {
   
   color: whitesmoke;
   padding-top: 35vh;
+  position: relative;
 }
+
 .svgCurve{
   -moz-transform: translate(0px, -20px);
   -webkit-transform: translate(0px, -20px);
@@ -42,8 +45,31 @@ html {
   transform: translate(0px, -20px);
 }
 
+.bottom-link{
+  position: absolute;
+  bottom: 20px;
+  width: calc(100vw - 48px);
+  display: none;
+}
+
 @media (max-width: 1169px) {
-  .svgCurve{
+  .svgCurve, .middle-link{
     display: none;
+  }
+
+  .bottom-link{
+    display: block;
+  }
+}
+
+@media (max-height: 400px) {
+  .top-content{
+    padding-top: 20vh;
+  }
+}
+
+@media (max-width: 380px) {
+  .top-content{
+    padding-top: 20vh;
   }
 }
