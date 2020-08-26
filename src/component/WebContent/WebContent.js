@@ -117,7 +117,7 @@ class MyProjects extends React.Component{
                                         <GitHubIcon style={{marginRight:5}}/>
                                     </Grid>
                                     <Grid item xs={11}>
-                                        <Link variant="body1" target="_blank" className="linkWeb">{value.github}</Link>
+                                        <Link variant="body1" target="_blank" className="linkWeb" href={value.github}>{value.github}</Link>
                                     </Grid>
                                 </Grid>
                             </CardContent>
@@ -137,7 +137,7 @@ class MyProjects extends React.Component{
                                         <GitHubIcon style={{marginRight:5}}/>
                                     </Grid>
                                     <Grid item xs={11}>
-                                        <Link variant="body1" target="_blank" className="linkWeb">{value.github}</Link>
+                                        <Link variant="body1" target="_blank" className="linkWeb" href={value.github}>{value.github}</Link>
                                     </Grid>
                                 </Grid>
                             </CardContent>
