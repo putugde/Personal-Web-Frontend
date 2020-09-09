@@ -59,6 +59,13 @@
     ],
     "projectData":[
         {
+            "name":"Telegram Bot",
+            "link":"https://t.me/vito_the_bot",
+            "stack":"Python, Selenium",
+            "github":"https://github.com/putugde/telegram-bot",
+            "desc":"A telegram bot for personal use ( for fun :D )"
+        },
+        {
             "name":"Personal Web",
             "link":"http://putu-gde.engineer/",
             "stack":"ReactJS, Material UI",
